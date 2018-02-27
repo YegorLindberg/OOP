@@ -19,24 +19,24 @@ const int UNDERFLOW = 3;
 const int UNCONVERTABLE = 4;
 
 int FibonachyNumbers(int N);
-int CheckStringToInt(int &maxNumber, const char *str);
+int CheckStringToInt(const char *str, int &maxNumber);
 
 int main(int argc, const char * argv[])
 {
-    cout << "Fibonacci numbers:\n";
     if (argc != 2)
     {
         cout << "Will be 2 arguments.\n";
         return 1;
     }
-    int number = 0;
+    int value = 0;
 
-    int enter = CheckStringToInt(number, argv[1]);
+    int enter = CheckStringToInt(argv[1], value);
     if (enter != SUCCESS)
         return 1;
-    if (number > 0)
+    if (value > 0)
     {
-        enter = FibonachyNumbers(number);
+        cout << "Fibonacci numbers:\n";
+        enter = FibonachyNumbers(value);
         if (enter != SUCCESS)
             return 1;
         cout << endl;
@@ -46,7 +46,7 @@ int main(int argc, const char * argv[])
         cout << "Uncorrect enter.\n  Number \"N\" "
         "will be bigger 0(zero).\n";
     }
-    cout << "number is=" << number << endl;
+    cout << "number is=" << value << endl;
     return 0;
 }
 /*
@@ -62,7 +62,7 @@ int CheckMaxValue(long &value) // for N-numbers
     return SUCCESS;
 }
 */
-int CheckStringToInt(int &maxNumber, const char *str)
+int CheckStringToInt(const char *str, int &maxNumber)
 {
     char *pLastChar;
     long number;
@@ -90,18 +90,18 @@ int CheckStringToInt(int &maxNumber, const char *str)
 int FibonachyNumbers(int N)
 {
     int rowCount = 3;
-    long beforePrev = 0;
-    long previous = 1;
-    long active = 1;
+    long beforePrevNum = 0;
+    long previousNum = 1;
+    long activeNum = 1;
     //int count = 1; //for N-numbers
-    cout << beforePrev << " " << previous << " " << active << " ";
-    while (previous + active <= N) // for N-numbers (count <= N)
+    cout << beforePrevNum << " " << previousNum << " " << activeNum << " ";
+    while (previousNum + activeNum <= N) // for N-numbers (count <= N)
     {
         //count++; //for N-numbers
         rowCount++;
-        beforePrev = previous;
-        previous = active;
-        active = previous + beforePrev;
+        beforePrevNum = previousNum;
+        previousNum = activeNum;
+        activeNum = previousNum + beforePrevNum;
         /*
         if (CheckMaxValue(active) == OVERFLOW)  // for N-numbers
         {
@@ -110,10 +110,10 @@ int FibonachyNumbers(int N)
         }
         */
         if (rowCount < 5) // for N-numbers (rowCount <= 5)
-            cout << active << " ";
+            cout << activeNum << " ";
         else
         {
-            cout << active << "\n";
+            cout << activeNum << "\n";
             rowCount = 1;
         }
     }

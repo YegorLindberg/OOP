@@ -14,8 +14,8 @@ using namespace std;
 
 const int FILE_IS_NOT_OPENED = 1;
 
-void FindAndReplaceSubstring();
-void ReadStringAndWriteChangingString(ifstream& inpFile, ofstream& outpFile, const string searchLine, const string replaceLine);
+string FindAndReplaceSubstring(string& mainString, const string searchStr, const string replaceStr);
+void CopyChangingString(ifstream& inpFile, ofstream& outpFile, const string searchLine, const string replaceLine);
 
 
 const int NECESSARY_AMOUNT_OF_ARGUMENTS = 4;
@@ -54,7 +54,7 @@ int main(int argc, const char * argv[]) {
     const string replacebleString = argv[4];
     
     //finction to replace string
-    ReadStringAndWriteChangingString(inputFile, outputFile, searchingString, replacebleString);
+    CopyChangingString(inputFile, outputFile, searchingString, replacebleString);
     
     if (!outputFile.flush())
     {
@@ -68,42 +68,35 @@ int main(int argc, const char * argv[]) {
 }
 
 
-void ReadStringAndWriteChangingString(ifstream& inpFile, ofstream& outpFile, const string searchLine, const string replaceLine)
+void CopyChangingString(ifstream& inpFile, ofstream& outpFile, const string searchLine, const string replaceLine)
 {
     string lineFromFile;
     while (getline(inpFile, lineFromFile))
     {
-        //FindAndReplaceSubstring();
+        lineFromFile = FindAndReplaceSubstring(lineFromFile, searchLine, replaceLine);
         outpFile << lineFromFile;
         if (!inpFile.eof())
             outpFile << endl;
     }
 }
 
-void FindAndReplaceSubstring()
+string FindAndReplaceSubstring(string& mainString, const string searchStr, const string replaceStr)
 {
-    
+    size_t position = 0;
+    string result;
+    while (position < mainString.length())
+    {
+        size_t foundPosition = mainString.find(searchStr, position);
+        if (foundPosition == -1)
+        {
+            result.append(mainString, position, foundPosition - position);
+            cout << "NOT FOUND\n";
+            break;
+        }
+        result.append(mainString, position, foundPosition - position);
+        result.append(replaceStr);
+        position = foundPosition + searchStr.length();
+        cout << "in progress\n";
+    }
+    return result;
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

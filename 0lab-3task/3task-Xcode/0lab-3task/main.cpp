@@ -25,7 +25,7 @@ int main(int argc, const char * argv[])
 {
     if (argc != 2)
     {
-        cout << "Will be 2 arguments.\n";
+        cout << "Program displays Fibonaccy Numbers.\nWill be 1 argument with program: ./program <number>\n";
         return 1;
     }
     int value = 0;

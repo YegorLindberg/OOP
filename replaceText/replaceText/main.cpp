@@ -14,7 +14,7 @@ using namespace std;
 
 const int FILE_IS_NOT_OPENED = 1;
 
-string FindAndReplaceSubstring(string& mainString, const string searchStr, const string replaceStr);
+string Replace(string& mainString, const string searchStr, const string replaceStr);
 void CopyChangingString(ifstream& inpFile, ofstream& outpFile, const string searchLine, const string replaceLine);
 
 
@@ -23,7 +23,7 @@ const int NECESSARY_AMOUNT_OF_ARGUMENTS = 4;
 int main(int argc, const char * argv[]) {
     if(argc != NECESSARY_AMOUNT_OF_ARGUMENTS + 1)
     {
-        cout << " You should enter 4 arguments:\n" <<
+        std::cout << " You should enter 4 arguments:\n" <<
         "\treplace.exe <input file> <output file> <search string> <replace string>\n";
         return 1;
     }
@@ -73,13 +73,13 @@ void CopyChangingString(ifstream& inpFile, ofstream& outpFile, const string sear
     string lineFromFile;
     while (getline(inpFile, lineFromFile))
     {
-        lineFromFile = FindAndReplaceSubstring(lineFromFile, searchLine, replaceLine);
+        lineFromFile = Replace(lineFromFile, searchLine, replaceLine);
         outpFile << lineFromFile;
         if (!inpFile.eof())
             outpFile << endl;
     }
 }
-
+/*
 string FindAndReplaceSubstring(string& mainString, const string searchStr, const string replaceStr)
 {
     size_t position = 0;
@@ -97,6 +97,25 @@ string FindAndReplaceSubstring(string& mainString, const string searchStr, const
         result.append(replaceStr);
         position = foundPosition + searchStr.length();
         cout << "in progress\n";
+    }
+    return result;
+}
+*/
+
+
+// TODO: string.replace instead string.append
+string Replace(string& mainString, const string searchStr, const string replaceStr)
+{
+    size_t position = 0;
+    string result = mainString;
+    while (position <= result.length())
+    {
+        size_t foundPosition = result.find(searchStr, position);
+        if (foundPosition == -1)
+            break;
+        result.replace(foundPosition, foundPosition + searchStr.length(), replaceStr);
+        position = foundPosition + replaceStr.length();
+        //cout << "in progress\n";
     }
     return result;
 }

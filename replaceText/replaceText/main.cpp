@@ -63,7 +63,6 @@ int main(int argc, const char * argv[]) {
     }
     inputFile.close();
     outputFile.close();
-    cout << "work is done.\n";
     return 0;
 }
 
@@ -73,12 +72,28 @@ void CopyChangingString(ifstream& inpFile, ofstream& outpFile, const string sear
     string lineFromFile;
     while (getline(inpFile, lineFromFile))
     {
-        lineFromFile = Replace(lineFromFile, searchLine, replaceLine);
-        outpFile << lineFromFile;
+        outpFile << Replace(lineFromFile, searchLine, replaceLine);
         if (!inpFile.eof())
             outpFile << endl;
     }
 }
+
+// TODO: string.replace instead string.append
+string Replace(string& mainString, const string searchStr, const string replaceStr)
+{
+    size_t position = 0;
+    string result = mainString;
+    while (position < result.length())
+    {
+        size_t foundPosition = result.find(searchStr, position);
+        if (foundPosition == string::npos)
+            break;
+        result.replace(foundPosition, searchStr.length(), replaceStr);
+        position = foundPosition + replaceStr.length();
+    }
+    return result;
+}
+
 /*
 string FindAndReplaceSubstring(string& mainString, const string searchStr, const string replaceStr)
 {
@@ -96,26 +111,8 @@ string FindAndReplaceSubstring(string& mainString, const string searchStr, const
         result.append(mainString, position, foundPosition - position);
         result.append(replaceStr);
         position = foundPosition + searchStr.length();
-        cout << "in progress\n";
     }
     return result;
 }
 */
 
-
-// TODO: string.replace instead string.append
-string Replace(string& mainString, const string searchStr, const string replaceStr)
-{
-    size_t position = 0;
-    string result = mainString;
-    while (position <= result.length())
-    {
-        size_t foundPosition = result.find(searchStr, position);
-        if (foundPosition == -1)
-            break;
-        result.replace(foundPosition, foundPosition + searchStr.length(), replaceStr);
-        position = foundPosition + replaceStr.length();
-        //cout << "in progress\n";
-    }
-    return result;
-}

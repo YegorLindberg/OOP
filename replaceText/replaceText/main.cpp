@@ -13,10 +13,11 @@
 using namespace std;
 
 const int FILE_IS_NOT_OPENED = 1;
+const int EMPTY_STRING = 2;
+const int FAILED_TO_SAVE_DATA = 3;
 
 string Replace(string& mainString, const string searchStr, const string replaceStr);
 void CopyChangingString(ifstream& inpFile, ofstream& outpFile, const string searchLine, const string replaceLine);
-
 
 const int NECESSARY_AMOUNT_OF_ARGUMENTS = 4;
 
@@ -49,7 +50,7 @@ int main(int argc, const char * argv[]) {
     if(searchingString == "")
     {
         cout << "Searched string can't be empty.\n";
-        return 2;
+        return EMPTY_STRING;
     }
     const string replacebleString = argv[4];
     
@@ -59,7 +60,7 @@ int main(int argc, const char * argv[]) {
     if (!outputFile.flush())
     {
         cout << "Failed to save data on disk\n";
-        return 3;
+        return FAILED_TO_SAVE_DATA;
     }
     inputFile.close();
     outputFile.close();

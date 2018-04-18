@@ -25,6 +25,12 @@ You say fall out of love, I'll fall into you You say)";
 string line3 = "You're gonna catch if I fall";
 string line3Result = "You're gonna catch if I slept";
 
+string line4 = "fafafafafa";
+string line4Result = "fafafafafa";
+
+string line5 = "fafafafafa";
+string line5Result = "fafafafafa";
+
 TEST_CASE("Test Treatment vector")
 {
     SECTION("\"ma\" repeats 6 times")
@@ -42,4 +48,15 @@ TEST_CASE("Test Treatment vector")
         string res3 = Replace(line3, "fall", "slept");
         CHECK(!res3.compare(line3Result));
     }
+    SECTION("\"fa\" equals")
+    {
+        string res4 = Replace(line4, "fa", "fa");
+        CHECK(!res4.compare(line4Result));
+    }
+    SECTION("\"fa\" empty")
+    {
+        string res5 = Replace(line4, "", "fa");
+        CHECK(!res5.compare(line4Result));
+    }
+
 }

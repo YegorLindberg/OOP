@@ -6,10 +6,13 @@
 //  Copyright © 2018 Moore. All rights reserved.
 //
 
+#pragma once
+
 #ifndef CTvSet_hpp
 #define CTvSet_hpp
 
 #include <stdio.h>
+#include <iostream>
 
 class CTvSet
 {
@@ -18,11 +21,13 @@ public:
     void TurnOn();
     void TurnOff();
     bool SelectChannel(int channel);
-    int GetChannel() const;
-    void Info();
+    bool SelectPreviousChannel();
+    int GetChannel()const;
+    void Info(CTvSet tv) const;
 private:
     bool m_swithcedOn = false;
     int m_channel = 0;
+    int m_prev_channel = 0;
 };
 
 #endif /* CTvSet_hpp */

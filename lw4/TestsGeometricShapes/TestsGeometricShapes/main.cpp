@@ -37,7 +37,7 @@ TEST_CASE("Проверка класса CLineSegment")
     {
         CHECK(AB->GetPerimeter() == 2);
     }
-    SECTION("Check SetOutlineColor:")
+    SECTION("Check GetOutlineColor:")
     {
         CHECK(AB->GetOutlineColor() == outlineColor);
     }

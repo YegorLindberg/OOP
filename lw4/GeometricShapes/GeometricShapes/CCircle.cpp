@@ -34,12 +34,12 @@ std::string CCircle::GetFillColor() const
 
 double CCircle::GetArea() const
 {
-    return M_PI * m_radius * m_radius;
+    return m_radius * m_radius * M_PI;
 }
 
 double CCircle::GetPerimeter() const
 {
-    return 2 * M_PI * m_radius;
+    return 2 * m_radius * M_PI;
 }
 
 std::string CCircle::ToString() const

@@ -52,9 +52,7 @@ double CTriangle::GetArea() const
     double firstSide = GetDistance(m_firstP, m_secP);
     double secSide = GetDistance(m_secP, m_thirdP);
     double thirdSide = GetDistance(m_thirdP, m_firstP);
-    double area = sqrt(halfOfPerimeter * (halfOfPerimeter - firstSide) * (halfOfPerimeter - secSide) * (halfOfPerimeter - thirdSide));
-    return area;
-    
+    return sqrt(halfOfPerimeter * (halfOfPerimeter - firstSide) * (halfOfPerimeter - secSide) * (halfOfPerimeter - thirdSide));
 }
 
 std::string CTriangle::ToString() const

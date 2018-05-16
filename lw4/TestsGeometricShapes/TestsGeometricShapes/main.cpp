@@ -5,7 +5,7 @@
 //  Created by Moore on 11/05/2018.
 //  Copyright © 2018 Moore. All rights reserved.
 //
-
+#include <string>
 #include "CPoint.hpp"
 #include "CCircle.hpp"
 #include "CTriangle.hpp"
@@ -27,27 +27,23 @@ TEST_CASE("Проверка класса CLineSegment")
     CPoint secP;
     secP.x = 2;
     secP.y = 4;
-    CLineSegment AB(firstP, secP);
+    string outlineColor = "brown";
+    IShape * AB = new CLineSegment(firstP, secP, outlineColor);
     SECTION("Check GetArea:")
     {
-        CHECK(AB.GetArea() == 2);
+        CHECK(AB->GetArea() == 0);
     }
     SECTION("Check GetPerimeter:")
     {
-        CHECK(AB.GetPerimeter() == 2);
+        CHECK(AB->GetPerimeter() == 2);
     }
     SECTION("Check SetOutlineColor:")
     {
-        AB.SetOutlineColor("green");
-        CHECK(AB.GetOutlineColor() == "green");
-        string color = "white";
-        AB.SetOutlineColor(color);
-        CHECK(AB.GetOutlineColor() == color);
+        CHECK(AB->GetOutlineColor() == outlineColor);
     }
     SECTION("Check ToString:")
     {
-        AB.SetOutlineColor("blue");
-        CHECK(AB.ToString() == "Line Segment:\n\t* area = 2\n\t* perimeter = 2\n\t* outline color = blue\n");
+        CHECK(AB->ToString() == "Line Segment:\n\t* area = 0\n\t* perimeter = 2\n\t* outline color = brown\n");
     }
 }
 
@@ -62,14 +58,18 @@ TEST_CASE("Проверка класса CTriangle")
     CPoint thirdP;
     thirdP.x = 4;
     thirdP.y = 1;
-    CTriangle ABC(firstP, secP, thirdP);
+    string outlineColor = "brown";
+    string fillColor = "white";
+    IShape * ABC = new CTriangle(firstP, secP, thirdP, outlineColor, fillColor);
     SECTION("Check GetPerimeter(CTriangle):")
     {
-        CHECK(ABC.GetPerimeter() == 10.242);
+        CHECK(ABC->GetPerimeter() <= 10.242 + EPSILO);
+        CHECK(ABC->GetPerimeter() >= 10.242 - EPSILO);
     }
     SECTION("Check GetArea(CTriangle):")
     {
-        CHECK(ABC.GetArea() == 4.498);
+        CHECK(ABC->GetArea() <= 4.5 + EPSILO);
+        CHECK(ABC->GetArea() >= 4.5 - EPSILO);
     }
 }
 
@@ -78,63 +78,38 @@ TEST_CASE("Проверка класса CRectangle")
     CPoint firstP;
     firstP.x = 1;
     firstP.y = 1;
-    CPoint secP;
-    secP.x = 1;
-    secP.y = 4;
-    CPoint thirdP;
-    thirdP.x = 4;
-    thirdP.y = 1;
-    CPoint fourthP;
-    fourthP.x = 4;
-    fourthP.y = 4;
-    CRectangle ABCD(firstP, secP, thirdP, fourthP);
-    SECTION("Check GetLeftTop(CRectangle):")
-    {
-        CPoint answer = secP;
-        CHECK(ABCD.GetLeftTop().x == answer.x);
-        CHECK(ABCD.GetLeftTop().y == answer.y);
-    }
-    SECTION("Check GetRightTop(CRectangle):")
-    {
-        CPoint answer = fourthP;
-        CHECK(ABCD.GetRightTop().x == answer.x);
-        CHECK(ABCD.GetRightTop().y == answer.y);
-    }
-    SECTION("Check GetRightBottom(CRectangle):")
-    {
-        CPoint answer = thirdP;
-        CHECK(ABCD.GetRightBottom().x == answer.x);
-        CHECK(ABCD.GetRightBottom().y == answer.y);
-    }
-    SECTION("Check Width and Height(CRectangle):")
-    {
-        CHECK(ABCD.GetWidth() == 3);
-        CHECK(ABCD.GetHeight() == 3);
-    }
-    
+    double width = 6;
+    double height = 8;
+    string outlineColor = "brown";
+    string fillColor = "white";
+    IShape * ABCD = new CRectangle(firstP, width, height, outlineColor, fillColor);
     SECTION("Check GetPerimeter(CRectangle):")
     {
-        CHECK(ABCD.GetPerimeter() == 12);
+        CHECK(ABCD->GetPerimeter() == 28);
     }
     SECTION("Check GetArea(CRectangle):")
     {
-        CHECK(ABCD.GetArea() == 9);
+        CHECK(ABCD->GetArea() == 48);
     }
 }
 
 TEST_CASE("Проверка класса CCircle")
 {
     CPoint center;
-    center.x = 6;
+    center.x = 1;
     center.y = 6;
     double radius = 5;
-    CCircle O(center, radius);
+    string outlineColor = "brown";
+    string fillColor = "white";
+    IShape * O = new CCircle(center, radius, outlineColor, fillColor);
     SECTION("Check GetPerimeter(CCircle):")
     {
-        CHECK(O.GetPerimeter() == 31.45);
+        CHECK(O->GetPerimeter() <= 31.415 + EPSILO);
+        CHECK(O->GetPerimeter() >= 31.415 - EPSILO);
     }
     SECTION("Check GetArea(CCircle):")
     {
-        CHECK(O.GetArea() == 78.625);
+        CHECK(O->GetArea() <= 78.539 + EPSILO);
+        CHECK(O->GetArea() >= 78.539 - EPSILO);
     }
 }

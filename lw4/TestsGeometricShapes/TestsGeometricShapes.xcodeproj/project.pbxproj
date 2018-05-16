@@ -7,9 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		CB327C2E20AC101900B36343 /* operations.cpp in Sources */ = {isa = PBXBuildFile; fileRef = CB327C2D20AC101900B36343 /* operations.cpp */; };
 		CB8E2EFE20A5C73000D04F19 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = CB8E2EFD20A5C73000D04F19 /* main.cpp */; };
 		CB8E2F0920A5CBB900D04F19 /* CLineSegment.cpp in Sources */ = {isa = PBXBuildFile; fileRef = CB8E2F0520A5CBB900D04F19 /* CLineSegment.cpp */; };
-		CB8E2F0A20A5CBB900D04F19 /* CPoint.cpp in Sources */ = {isa = PBXBuildFile; fileRef = CB8E2F0620A5CBB900D04F19 /* CPoint.cpp */; };
 		CB8E2F0D20A65A0500D04F19 /* CTriangle.cpp in Sources */ = {isa = PBXBuildFile; fileRef = CB8E2F0B20A65A0400D04F19 /* CTriangle.cpp */; };
 		CBE3CF7620A66CD500740602 /* CRectangle.cpp in Sources */ = {isa = PBXBuildFile; fileRef = CBE3CF7420A66CD400740602 /* CRectangle.cpp */; };
 		CBE3CF7920A6845700740602 /* CCircle.cpp in Sources */ = {isa = PBXBuildFile; fileRef = CBE3CF7720A6845700740602 /* CCircle.cpp */; };
@@ -28,11 +28,13 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		CB327C2C20AC101900B36343 /* operations.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = operations.hpp; path = ../GeometricShapes/GeometricShapes/operations.hpp; sourceTree = "<group>"; };
+		CB327C2D20AC101900B36343 /* operations.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = operations.cpp; path = ../GeometricShapes/GeometricShapes/operations.cpp; sourceTree = "<group>"; };
+		CB327C2F20AC103200B36343 /* ISolidShape.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = ISolidShape.hpp; path = ../GeometricShapes/ISolidShape.hpp; sourceTree = "<group>"; };
+		CB327C3020AC103200B36343 /* IShape.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = IShape.hpp; path = ../GeometricShapes/IShape.hpp; sourceTree = "<group>"; };
 		CB8E2EFA20A5C73000D04F19 /* TestsGeometricShapes */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = TestsGeometricShapes; sourceTree = BUILT_PRODUCTS_DIR; };
 		CB8E2EFD20A5C73000D04F19 /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
-		CB8E2F0420A5CBB900D04F19 /* libraries.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = libraries.hpp; path = ../GeometricShapes/GeometricShapes/libraries.hpp; sourceTree = "<group>"; };
 		CB8E2F0520A5CBB900D04F19 /* CLineSegment.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = CLineSegment.cpp; path = ../GeometricShapes/GeometricShapes/CLineSegment.cpp; sourceTree = "<group>"; };
-		CB8E2F0620A5CBB900D04F19 /* CPoint.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = CPoint.cpp; path = ../GeometricShapes/GeometricShapes/CPoint.cpp; sourceTree = "<group>"; };
 		CB8E2F0720A5CBB900D04F19 /* CLineSegment.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = CLineSegment.hpp; path = ../GeometricShapes/GeometricShapes/CLineSegment.hpp; sourceTree = "<group>"; };
 		CB8E2F0820A5CBB900D04F19 /* CPoint.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = CPoint.hpp; path = ../GeometricShapes/GeometricShapes/CPoint.hpp; sourceTree = "<group>"; };
 		CB8E2F0B20A65A0400D04F19 /* CTriangle.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = CTriangle.cpp; path = ../GeometricShapes/GeometricShapes/CTriangle.cpp; sourceTree = "<group>"; };
@@ -57,6 +59,10 @@
 		CB8E2EF120A5C73000D04F19 = {
 			isa = PBXGroup;
 			children = (
+				CB327C3020AC103200B36343 /* IShape.hpp */,
+				CB327C2F20AC103200B36343 /* ISolidShape.hpp */,
+				CB327C2D20AC101900B36343 /* operations.cpp */,
+				CB327C2C20AC101900B36343 /* operations.hpp */,
 				CBE3CF7720A6845700740602 /* CCircle.cpp */,
 				CBE3CF7820A6845700740602 /* CCircle.hpp */,
 				CBE3CF7420A66CD400740602 /* CRectangle.cpp */,
@@ -65,9 +71,7 @@
 				CB8E2F0C20A65A0400D04F19 /* CTriangle.hpp */,
 				CB8E2F0520A5CBB900D04F19 /* CLineSegment.cpp */,
 				CB8E2F0720A5CBB900D04F19 /* CLineSegment.hpp */,
-				CB8E2F0620A5CBB900D04F19 /* CPoint.cpp */,
 				CB8E2F0820A5CBB900D04F19 /* CPoint.hpp */,
-				CB8E2F0420A5CBB900D04F19 /* libraries.hpp */,
 				CB8E2EFC20A5C73000D04F19 /* TestsGeometricShapes */,
 				CB8E2EFB20A5C73000D04F19 /* Products */,
 			);
@@ -147,10 +151,10 @@
 			files = (
 				CB8E2EFE20A5C73000D04F19 /* main.cpp in Sources */,
 				CBE3CF7620A66CD500740602 /* CRectangle.cpp in Sources */,
-				CB8E2F0A20A5CBB900D04F19 /* CPoint.cpp in Sources */,
 				CBE3CF7920A6845700740602 /* CCircle.cpp in Sources */,
 				CB8E2F0920A5CBB900D04F19 /* CLineSegment.cpp in Sources */,
 				CB8E2F0D20A65A0500D04F19 /* CTriangle.cpp in Sources */,
+				CB327C2E20AC101900B36343 /* operations.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -9,6 +9,8 @@
 #ifndef CPoint_hpp
 #define CPoint_hpp
 
+#pragma once
+
 #include <stdio.h>
 
 class CPoint

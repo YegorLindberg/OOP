@@ -9,6 +9,8 @@
 #ifndef IShape_h
 #define IShape_h
 
+#pragma once
+
 #include <string>
 
 class IShape

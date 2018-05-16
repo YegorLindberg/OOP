@@ -8,7 +8,9 @@
 
 #include "CCircle.hpp"
 #include "CPoint.hpp"
-#include "libraries.hpp"
+#include <string>
+#include <sstream>
+#include "math.h"
 
 CPoint CCircle::GetCenter() const
 {

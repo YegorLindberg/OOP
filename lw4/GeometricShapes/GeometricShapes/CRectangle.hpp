@@ -9,19 +9,21 @@
 #ifndef CRectangle_hpp
 #define CRectangle_hpp
 
+#pragma once
+
 #include <stdio.h>
-#include "libraries.hpp"
+#include <string>
 #include "ISolidShape.hpp"
 
 class CRectangle : public ISolidShape
 {
 public:
-    CRectangle(CPoint firstP, CPoint thirdP, double width, double height)
-        : m_firstP(firstP), m_thirdP(thirdP), m_width(width), m_height(height)
+    CRectangle(CPoint firstP, double width, double height, std::string outlineColor, std::string fillColor)
+        : m_firstP(firstP), m_width(width), m_height(height), m_outlineColor(outlineColor), m_fillColor(fillColor)
         {};
     
     CPoint GetLeftTop() const;
-    CPoint GetRightBottom() const;
+    CPoint GetRightBottom();
     double GetArea() const;
     double GetPerimeter() const;
     std::string ToString() const;

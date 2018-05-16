@@ -7,7 +7,9 @@
 //
 
 #include "CLineSegment.hpp"
-#include "libraries.hpp"
+#include <sstream>
+#include <string>
+#include "math.h"
 
 double CLineSegment::GetArea() const
 {

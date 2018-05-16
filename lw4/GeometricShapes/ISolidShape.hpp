@@ -9,6 +9,8 @@
 #ifndef ISolidShape_hpp
 #define ISolidShape_hpp
 
+#pragma once
+
 #include "IShape.hpp"
 #include <string>
 

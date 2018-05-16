@@ -7,9 +7,10 @@
 //
 
 #include "CTriangle.hpp"
-#include "libraries.hpp"
 #include "CPoint.hpp"
-
+#include "math.h"
+#include <sstream>
+#include <string>
 
 CPoint CTriangle::GetVertex1()
 {

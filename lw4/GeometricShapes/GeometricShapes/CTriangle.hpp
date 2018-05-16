@@ -9,16 +9,17 @@
 #ifndef CTriangle_hpp
 #define CTriangle_hpp
 
+#pragma once
+
 #include <stdio.h>
-#include "libraries.hpp"
 #include "CPoint.hpp"
 #include "ISolidShape.hpp"
 
 class CTriangle : public ISolidShape
 {
 public:
-    CTriangle(CPoint firstP, CPoint secP, CPoint thirdP)
-        : m_firstP(firstP), m_secP(secP), m_thirdP(thirdP)
+    CTriangle(CPoint firstP, CPoint secP, CPoint thirdP, std::string outlineColor, std::string fillColor)
+        : m_firstP(firstP), m_secP(secP), m_thirdP(thirdP), m_outlineColor(outlineColor), m_fillColor(fillColor)
     {};
     CPoint GetVertex1();
     CPoint GetVertex2();

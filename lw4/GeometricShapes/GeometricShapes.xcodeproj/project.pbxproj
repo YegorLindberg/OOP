@@ -10,6 +10,7 @@
 		CB327C2220AB765000B36343 /* CRectangle.cpp in Sources */ = {isa = PBXBuildFile; fileRef = CB327C1D20AB764F00B36343 /* CRectangle.cpp */; };
 		CB327C2320AB765000B36343 /* CCircle.cpp in Sources */ = {isa = PBXBuildFile; fileRef = CB327C1E20AB764F00B36343 /* CCircle.cpp */; };
 		CB327C2420AB765000B36343 /* CTriangle.cpp in Sources */ = {isa = PBXBuildFile; fileRef = CB327C2120AB764F00B36343 /* CTriangle.cpp */; };
+		CB327C2B20AC0BD600B36343 /* operations.cpp in Sources */ = {isa = PBXBuildFile; fileRef = CB327C2920AC0BD500B36343 /* operations.cpp */; };
 		CB8E2EE420A5BA0600D04F19 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = CB8E2EE320A5BA0600D04F19 /* main.cpp */; };
 		CB8E2EEF20A5C28000D04F19 /* CLineSegment.cpp in Sources */ = {isa = PBXBuildFile; fileRef = CB8E2EED20A5C28000D04F19 /* CLineSegment.cpp */; };
 /* End PBXBuildFile section */
@@ -35,12 +36,13 @@
 		CB327C2120AB764F00B36343 /* CTriangle.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = CTriangle.cpp; path = GeometricShapes/CTriangle.cpp; sourceTree = "<group>"; };
 		CB327C2620AB773100B36343 /* ISolidShape.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = ISolidShape.hpp; sourceTree = "<group>"; };
 		CB327C2820AB7A0C00B36343 /* IShape.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = IShape.hpp; sourceTree = "<group>"; };
+		CB327C2920AC0BD500B36343 /* operations.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = operations.cpp; path = GeometricShapes/operations.cpp; sourceTree = "<group>"; };
+		CB327C2A20AC0BD600B36343 /* operations.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; name = operations.hpp; path = GeometricShapes/operations.hpp; sourceTree = "<group>"; };
 		CB8E2EE020A5BA0600D04F19 /* GeometricShapes */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = GeometricShapes; sourceTree = BUILT_PRODUCTS_DIR; };
 		CB8E2EE320A5BA0600D04F19 /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
 		CB8E2EEB20A5BF3C00D04F19 /* CPoint.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; name = CPoint.hpp; path = GeometricShapes/CPoint.hpp; sourceTree = "<group>"; };
 		CB8E2EED20A5C28000D04F19 /* CLineSegment.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = CLineSegment.cpp; path = GeometricShapes/CLineSegment.cpp; sourceTree = "<group>"; };
 		CB8E2EEE20A5C28000D04F19 /* CLineSegment.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; name = CLineSegment.hpp; path = GeometricShapes/CLineSegment.hpp; sourceTree = "<group>"; };
-		CB8E2EF020A5C37800D04F19 /* libraries.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; name = libraries.hpp; path = GeometricShapes/libraries.hpp; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -57,6 +59,8 @@
 		CB8E2ED720A5BA0600D04F19 = {
 			isa = PBXGroup;
 			children = (
+				CB327C2920AC0BD500B36343 /* operations.cpp */,
+				CB327C2A20AC0BD600B36343 /* operations.hpp */,
 				CB327C2820AB7A0C00B36343 /* IShape.hpp */,
 				CB327C2620AB773100B36343 /* ISolidShape.hpp */,
 				CB327C1E20AB764F00B36343 /* CCircle.cpp */,
@@ -68,7 +72,6 @@
 				CB8E2EED20A5C28000D04F19 /* CLineSegment.cpp */,
 				CB8E2EEE20A5C28000D04F19 /* CLineSegment.hpp */,
 				CB8E2EEB20A5BF3C00D04F19 /* CPoint.hpp */,
-				CB8E2EF020A5C37800D04F19 /* libraries.hpp */,
 				CB8E2EE220A5BA0600D04F19 /* GeometricShapes */,
 				CB8E2EE120A5BA0600D04F19 /* Products */,
 			);
@@ -151,6 +154,7 @@
 				CB327C2420AB765000B36343 /* CTriangle.cpp in Sources */,
 				CB8E2EE420A5BA0600D04F19 /* main.cpp in Sources */,
 				CB327C2220AB765000B36343 /* CRectangle.cpp in Sources */,
+				CB327C2B20AC0BD600B36343 /* operations.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

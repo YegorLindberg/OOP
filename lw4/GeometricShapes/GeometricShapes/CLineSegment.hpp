@@ -9,9 +9,10 @@
 #ifndef CLineSegment_hpp
 #define CLineSegment_hpp
 
+#pragma once
+
 #include <stdio.h>
 #include "CPoint.hpp"
-#include "libraries.hpp"
 #include "IShape.hpp"
 
 class CLineSegment : public IShape

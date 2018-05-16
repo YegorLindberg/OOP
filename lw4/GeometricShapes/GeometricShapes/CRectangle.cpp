@@ -5,7 +5,8 @@
 //  Created by Moore on 12/05/2018.
 //  Copyright © 2018 Moore. All rights reserved.
 //
-#include "libraries.hpp"
+#include <string>
+#include <sstream>
 #include "CTriangle.hpp"
 #include "CRectangle.hpp"
 #include "CPoint.hpp"
@@ -25,8 +26,10 @@ CPoint CRectangle::GetLeftTop() const
     return m_firstP;
 }
 
-CPoint CRectangle::GetRightBottom() const
+CPoint CRectangle::GetRightBottom()
 {
+    m_thirdP.x = m_firstP.x + m_width;
+    m_thirdP.y = m_firstP.y - m_height;
     return m_thirdP;
 }
 

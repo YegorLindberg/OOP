@@ -9,6 +9,8 @@
 #ifndef CCircle_hpp
 #define CCircle_hpp
 
+#pragma once
+
 #include <stdio.h>
 #include "CPoint.hpp"
 #include "ISolidShape.hpp"
@@ -17,8 +19,8 @@
 class CCircle : public ISolidShape
 {
 public:
-    CCircle(CPoint center, double radius)
-        : m_center(center), m_radius(radius)
+    CCircle(CPoint center, double radius, std::string outlineColor, std::string fillColor)
+        : m_center(center), m_radius(radius), m_outlineColor(outlineColor), m_fillColor(fillColor)
     {};
 
     double GetArea() const;

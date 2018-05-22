@@ -14,31 +14,10 @@
 class CRational
 {
 public:
-    // Конструирует рациональное число, равное нулю (0/1)
-    CRational(): m_numerator(0), m_denominator(1)
-    {};
-    // Конструирует рациональное число, равное value (value/1)
-    CRational(int value): m_numerator(value), m_denominator(1)
-    {};
-    // Конструирует рациональное число, равное numerator/denominator
-    /*
-     Рациональное число должно храниться в нормализованном виде:
-        -знаменатель положительный (числитель может быть отрицательным)
-        -числитель и знаменатель не имеют общиз делителей (6/8 => 3/4 и т.п.)
-     -Если знаменатель равен нулю, должно сконструироваться рациональное число, равное нулю,
-        либо должно быть выброшено исключение std::invalid_argument.
-     */
-    CRational(int numerator, int denominator): m_numerator(numerator), m_denominator(denominator)
-    {
-        if (m_denominator <= 0)
-        {
-            throw std::invalid_argument("Знаменатель должен быть положительным и не равным нулю.\n");
-        }
-        else
-        {
-            CalculateGreatestCommonDivisor(m_numerator, m_denominator);
-        }
-    };
+    CRational();
+    CRational(int value);
+    CRational(int numerator, int denominator);
+    ~CRational();
     
     template<class T>
     void CalculateGreatestCommonDivisor(T& numerator, T& denominator) const;
@@ -62,6 +41,7 @@ public:
     //Binary + and -
     CRational const operator +(CRational const& ratNum) const;
     CRational const operator -(CRational const& ratNum) const;
+    
     // += and -=
     CRational const operator +=(CRational const& ratNum);
     CRational const operator -=(CRational const& ratNum);
@@ -81,5 +61,10 @@ private:
     int m_numerator;
     int m_denominator;
 };
+
+CRational const operator +(const int& num, CRational const& ratNum);
+CRational const operator -(const int& num, CRational const& ratNum);
+CRational const operator *(const int& num, CRational const& ratNum);
+CRational const operator /(const int& num, CRational const& ratNum);
 
 #endif /* CRational_hpp */

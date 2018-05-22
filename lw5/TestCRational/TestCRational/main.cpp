@@ -80,6 +80,7 @@ TEST_CASE("проверка класса CRational")
         CRational h(-4, 5);
         g = -g;
         CHECK(g == h);
+        
         g = +g;
         CHECK(g == g);
         cout << "Test \"Check operators UNARY + and - \" is passed.\n";
@@ -91,12 +92,21 @@ TEST_CASE("проверка класса CRational")
         CRational h(-4, 5);
         f = f + g;
         CHECK(f == CRational(8, 5));
+        
         f = g - h;
         CHECK(f == CRational(8, 5));
-        g = g + 4;
-        CHECK(g == CRational(24, 5));
+        
+        g = h + 4;
+        CHECK(g == CRational(16, 5));
+        
         h = h - 2;
         CHECK(h == CRational(-14, 5));
+        
+        f = 4 + h;
+        CHECK(f == CRational(6, 5));
+        
+        g = 2 - f;
+        CHECK(g == CRational(4, 5));
         cout << "Test \"Check operators BINARY + and - \" is passed.\n";
     }
     SECTION("Check operators += and -= :")
@@ -124,10 +134,16 @@ TEST_CASE("проверка класса CRational")
         CHECK(g == CRational(36, 50));
         t = t / f;
         CHECK(t == CRational(20, 21));
+        
         f = t * 2;
         CHECK(f == CRational(40, 21));
         f = t / 3;
         CHECK(f == CRational(20, 63));
+        
+        g = 2 * f;
+        CHECK(g == CRational(40, 63));
+        g = 4 / f;
+        CHECK(g == CRational(63, 5));
         cout << "Test \"Check * and /\" is passed.\n";
     }
     SECTION("Check  *= and /=:")
@@ -135,6 +151,7 @@ TEST_CASE("проверка класса CRational")
         CRational g(36, 50);
         g *= 5;
         CHECK(g == CRational(18, 5));
+        
         g /= 3;
         CHECK(g == CRational(6, 5));
         cout << "Test \"Check  *= and /=\" is passed.\n";

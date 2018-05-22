@@ -9,6 +9,38 @@
 #include "CRational.hpp"
 #include <iostream>
 
+// Конструирует рациональное число, равное нулю (0/1)
+CRational::CRational(): m_numerator(0), m_denominator(1)
+{
+};
+// Конструирует рациональное число, равное value (value/1)
+CRational::CRational(int value): m_numerator(value), m_denominator(1)
+{
+};
+// Конструирует рациональное число, равное numerator/denominator
+/*
+ Рациональное число должно храниться в нормализованном виде:
+ -знаменатель положительный (числитель может быть отрицательным)
+ -числитель и знаменатель не имеют общиз делителей (6/8 => 3/4 и т.п.)
+ -Если знаменатель равен нулю, должно сконструироваться рациональное число, равное нулю,
+ либо должно быть выброшено исключение std::invalid_argument.
+ */
+CRational::CRational(int numerator, int denominator): m_numerator(numerator), m_denominator(denominator)
+{
+    if (m_denominator <= 0)
+    {
+        throw std::invalid_argument("Знаменатель должен быть положительным и не равным нулю.\n");
+    }
+    else
+    {
+        CalculateGreatestCommonDivisor(m_numerator, m_denominator);
+    }
+};
+//деструктор
+CRational::~CRational()
+{
+};
+
 template<class T>
 void CRational::CalculateGreatestCommonDivisor(T& numerator, T& denominator) const
 {
@@ -88,7 +120,7 @@ CRational const CRational::operator -() const
     return CRational(-m_numerator, m_denominator);
 }
 
-//используются дружественные функции.
+//используются дружественные функции.>
 CRational const CRational::operator +(CRational const& ratNum) const
 {
     long long commonDenominator = m_denominator * ratNum.GetDenominator();
@@ -166,4 +198,21 @@ bool const CRational::operator <=(CRational const& ratNum) const
 bool const CRational::operator >=(CRational const& ratNum) const
 {
     return ((*this > ratNum) or (*this == ratNum));
+}
+
+CRational const operator +(const int& num, CRational const& ratNum)
+{
+    return (CRational(num) + ratNum);
+}
+CRational const operator -(const int& num, CRational const& ratNum)
+{
+    return (CRational(num) - ratNum);
+}
+CRational const operator *(const int& num, CRational const& ratNum)
+{
+    return (CRational(num) * ratNum);
+}
+CRational const operator /(const int& num, CRational const& ratNum)
+{
+    return (CRational(num) / ratNum);
 }

@@ -13,21 +13,9 @@ using namespace std;
 void AddLineSegment(vector<IShape*>& shapes)
 {
     char ch;
-    //double value;
     CPoint startP;
     cout << "Enter x to start point: ";
     cin >> startP.x;
-    /*
-     cin >> ch;
-     if (value = static_cast<double>(ch)) //TODO: здесь должна быть проверка на то, число ли это типа дабл?..
-     {
-     startP.x = value;
-     }
-     else
-     {
-     continue;
-     }
-     */
     cout << "Enter y to start point: ";
     cin >> startP.y;
     CPoint endP;

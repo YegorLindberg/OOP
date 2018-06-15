@@ -2,7 +2,7 @@
 //  ArraySum.hpp
 //  ArraySum
 //
-//  Created by Moore on 14.06.2018.
+//  Created by Moore on 01.06.2018.
 //  Copyright © 2018 Moore. All rights reserved.
 //
 

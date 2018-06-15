@@ -12,8 +12,7 @@
 #include <stdio.h>
 #include <string>
 
-class CUrlParsingError : public std::invalid_argument
-{
+class CUrlParsingError : public std::invalid_argument {
 public:
     CUrlParsingError(std::string const& message);
     std::string What() const;

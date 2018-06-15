@@ -7,12 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		CB896BEF20D296F400961C04 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = CB896BEE20D296F400961C04 /* main.cpp */; };
-		CB896BFA20D2BC9300961C04 /* CMyStack.cpp in Sources */ = {isa = PBXBuildFile; fileRef = CB896BF820D2BC9300961C04 /* CMyStack.cpp */; };
+		CBD164DA20D3725B004C22B1 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = CBD164D920D3725B004C22B1 /* main.cpp */; };
+		CBD164E220D372C5004C22B1 /* CMyStack.cpp in Sources */ = {isa = PBXBuildFile; fileRef = CBD164E020D372C5004C22B1 /* CMyStack.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
-		CB896BE920D296F400961C04 /* CopyFiles */ = {
+		CBD164D420D3725B004C22B1 /* CopyFiles */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
 			dstPath = /usr/share/man/man1/;
@@ -24,14 +24,14 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		CB896BEB20D296F400961C04 /* CMyStack */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = CMyStack; sourceTree = BUILT_PRODUCTS_DIR; };
-		CB896BEE20D296F400961C04 /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
-		CB896BF820D2BC9300961C04 /* CMyStack.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = CMyStack.cpp; path = CMyStack/CMyStack.cpp; sourceTree = "<group>"; };
-		CB896BF920D2BC9300961C04 /* CMyStack.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; name = CMyStack.hpp; path = CMyStack/CMyStack.hpp; sourceTree = "<group>"; };
+		CBD164D620D3725B004C22B1 /* CMyStackTest */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = CMyStackTest; sourceTree = BUILT_PRODUCTS_DIR; };
+		CBD164D920D3725B004C22B1 /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
+		CBD164E020D372C5004C22B1 /* CMyStack.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = CMyStack.cpp; path = ../CMyStack/CMyStack/CMyStack.cpp; sourceTree = "<group>"; };
+		CBD164E120D372C5004C22B1 /* CMyStack.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = CMyStack.hpp; path = ../CMyStack/CMyStack/CMyStack.hpp; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		CB896BE820D296F400961C04 /* Frameworks */ = {
+		CBD164D320D3725B004C22B1 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -41,97 +41,97 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		CB896BE220D296F400961C04 = {
+		CBD164CD20D3725B004C22B1 = {
 			isa = PBXGroup;
 			children = (
-				CB896BF820D2BC9300961C04 /* CMyStack.cpp */,
-				CB896BF920D2BC9300961C04 /* CMyStack.hpp */,
-				CB896BED20D296F400961C04 /* CMyStack */,
-				CB896BEC20D296F400961C04 /* Products */,
+				CBD164E020D372C5004C22B1 /* CMyStack.cpp */,
+				CBD164E120D372C5004C22B1 /* CMyStack.hpp */,
+				CBD164D820D3725B004C22B1 /* CMyStackTest */,
+				CBD164D720D3725B004C22B1 /* Products */,
 			);
 			sourceTree = "<group>";
 		};
-		CB896BEC20D296F400961C04 /* Products */ = {
+		CBD164D720D3725B004C22B1 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				CB896BEB20D296F400961C04 /* CMyStack */,
+				CBD164D620D3725B004C22B1 /* CMyStackTest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		CB896BED20D296F400961C04 /* CMyStack */ = {
+		CBD164D820D3725B004C22B1 /* CMyStackTest */ = {
 			isa = PBXGroup;
 			children = (
-				CB896BEE20D296F400961C04 /* main.cpp */,
+				CBD164D920D3725B004C22B1 /* main.cpp */,
 			);
-			path = CMyStack;
+			path = CMyStackTest;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		CB896BEA20D296F400961C04 /* CMyStack */ = {
+		CBD164D520D3725B004C22B1 /* CMyStackTest */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = CB896BF220D296F400961C04 /* Build configuration list for PBXNativeTarget "CMyStack" */;
+			buildConfigurationList = CBD164DD20D3725B004C22B1 /* Build configuration list for PBXNativeTarget "CMyStackTest" */;
 			buildPhases = (
-				CB896BE720D296F400961C04 /* Sources */,
-				CB896BE820D296F400961C04 /* Frameworks */,
-				CB896BE920D296F400961C04 /* CopyFiles */,
+				CBD164D220D3725B004C22B1 /* Sources */,
+				CBD164D320D3725B004C22B1 /* Frameworks */,
+				CBD164D420D3725B004C22B1 /* CopyFiles */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
-			name = CMyStack;
-			productName = CMyStack;
-			productReference = CB896BEB20D296F400961C04 /* CMyStack */;
+			name = CMyStackTest;
+			productName = CMyStackTest;
+			productReference = CBD164D620D3725B004C22B1 /* CMyStackTest */;
 			productType = "com.apple.product-type.tool";
 		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
-		CB896BE320D296F400961C04 /* Project object */ = {
+		CBD164CE20D3725B004C22B1 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
 				LastUpgradeCheck = 0940;
 				ORGANIZATIONNAME = Moore;
 				TargetAttributes = {
-					CB896BEA20D296F400961C04 = {
+					CBD164D520D3725B004C22B1 = {
 						CreatedOnToolsVersion = 9.4;
 					};
 				};
 			};
-			buildConfigurationList = CB896BE620D296F400961C04 /* Build configuration list for PBXProject "CMyStack" */;
+			buildConfigurationList = CBD164D120D3725B004C22B1 /* Build configuration list for PBXProject "CMyStackTest" */;
 			compatibilityVersion = "Xcode 9.3";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
 			);
-			mainGroup = CB896BE220D296F400961C04;
-			productRefGroup = CB896BEC20D296F400961C04 /* Products */;
+			mainGroup = CBD164CD20D3725B004C22B1;
+			productRefGroup = CBD164D720D3725B004C22B1 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				CB896BEA20D296F400961C04 /* CMyStack */,
+				CBD164D520D3725B004C22B1 /* CMyStackTest */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXSourcesBuildPhase section */
-		CB896BE720D296F400961C04 /* Sources */ = {
+		CBD164D220D3725B004C22B1 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CB896BFA20D2BC9300961C04 /* CMyStack.cpp in Sources */,
-				CB896BEF20D296F400961C04 /* main.cpp in Sources */,
+				CBD164E220D372C5004C22B1 /* CMyStack.cpp in Sources */,
+				CBD164DA20D3725B004C22B1 /* main.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin XCBuildConfiguration section */
-		CB896BF020D296F400961C04 /* Debug */ = {
+		CBD164DB20D3725B004C22B1 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -189,7 +189,7 @@
 			};
 			name = Debug;
 		};
-		CB896BF120D296F400961C04 /* Release */ = {
+		CBD164DC20D3725B004C22B1 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -240,7 +240,7 @@
 			};
 			name = Release;
 		};
-		CB896BF320D296F400961C04 /* Debug */ = {
+		CBD164DE20D3725B004C22B1 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
@@ -249,7 +249,7 @@
 			};
 			name = Debug;
 		};
-		CB896BF420D296F400961C04 /* Release */ = {
+		CBD164DF20D3725B004C22B1 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
@@ -261,25 +261,25 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		CB896BE620D296F400961C04 /* Build configuration list for PBXProject "CMyStack" */ = {
+		CBD164D120D3725B004C22B1 /* Build configuration list for PBXProject "CMyStackTest" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				CB896BF020D296F400961C04 /* Debug */,
-				CB896BF120D296F400961C04 /* Release */,
+				CBD164DB20D3725B004C22B1 /* Debug */,
+				CBD164DC20D3725B004C22B1 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		CB896BF220D296F400961C04 /* Build configuration list for PBXNativeTarget "CMyStack" */ = {
+		CBD164DD20D3725B004C22B1 /* Build configuration list for PBXNativeTarget "CMyStackTest" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				CB896BF320D296F400961C04 /* Debug */,
-				CB896BF420D296F400961C04 /* Release */,
+				CBD164DE20D3725B004C22B1 /* Debug */,
+				CBD164DF20D3725B004C22B1 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
-	rootObject = CB896BE320D296F400961C04 /* Project object */;
+	rootObject = CBD164CE20D3725B004C22B1 /* Project object */;
 }
